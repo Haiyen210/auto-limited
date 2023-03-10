@@ -1,12 +1,19 @@
 import http from "../http-common";
-class OrderDetailService{
-    get(id){
+class OrderDetailService {
+    getAll() {
+        return http.get("/OrderDetails");
+    }
+    get(id) {
         return http.get(`/OrderDetails/${id}`);
     }
-    update(data){
-        return http.post(`/OrderDetails/${data.id}`,data);
+    create(data) {
+        return http.post("/OrderDetails", data);
     }
-    delete(id){
+    update(data) {
+        return http.post("/OrderDetails/PutProductQuantity", data);
+    }
+    delete(id) {
         return http.delete(`/OrderDetails/${id}`);
     }
 }
+export default new OrderDetailService();

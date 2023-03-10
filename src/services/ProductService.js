@@ -6,29 +6,14 @@ class ProductService {
     get(id) {
         return http.get(`/product/${id}`);
     }
-    getTrash() {
-        return http.get("/Product/TrashProduct");
+    getcate(id) {
+        return http.get(`/product/getcategory/${id}`);
     }
-    create(data) {
-        return http.post("/product", data);
+    getProductDesc() {
+        return http.get("/product/ProductDESC");
     }
-    update(data) {
-        return http.post(`/product/PutProduct`, data);
+    getProductSale() {
+        return http.get("/product/ProductSale");
     }
-    temporaryDelete(data) {
-        return http.post(`/product/TemporaryDelete`, data);
-    }
-    repeat(data) {
-        return http.post(`/product/RepeatProduct`, data);
-    }
-    delete(id) {
-            return http.delete(`/product/${id}`);
-        }
-        //   deleteAll() {
-        //     return http.delete(`/tutorials`);
-        //   }
-        //   findByTitle(title) {
-        //     return http.get(`/tutorials?title=${title}`);
-        //   }
 }
 export default new ProductService();
